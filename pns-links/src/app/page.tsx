@@ -103,7 +103,7 @@ export default function Page() {
             Manajer Link Pegawai
           </h1>
           <p className="text-muted-foreground">
-            Satu tempat untuk semua link penting PNS. Tanpa database, persist di browser.
+            Satu tempat untuk semua link penting PNS
           </p>
         </div>
         <div className="flex items-center gap-2">

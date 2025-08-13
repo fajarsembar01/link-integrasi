@@ -1,85 +1,80 @@
 {
-  "categories": [
-    "Kepegawaian",
-    "SPMB",
-    "Latsar",
-    "Surat-Menyurat",
-    "Pendidikan",
-    "Email & Akses",
-    "Keuangan"
-  ],
-  "items": [
-    {
-      "id": "mysapk",
-      "title": "MySAPK BKN",
-      "url": "https://mysapk.bkn.go.id/",
-      "description": "Layanan kepegawaian BKN",
-      "tags": ["asn", "bkn"],
-      "category": "Kepegawaian",
-      "agency": "BKN"
-    },
-    {
-      "id": "ekinerja",
-      "title": "e-Kinerja DKI",
-      "url": "https://kinerja.jakarta.go.id/",
-      "description": "Pelaporan kinerja harian",
-      "tags": ["kinerja", "dki"],
-      "category": "Kepegawaian",
-      "agency": "Pemprov DKI"
-    },
-    {
-      "id": "spmb",
-      "title": "SPMB DKI",
-      "url": "https://spmb.jakarta.go.id/",
-      "description": "Seleksi Penerimaan Peserta Didik Baru",
-      "tags": ["ppdb", "data"],
-      "category": "SPMB",
-      "agency": "Disdik DKI"
-    },
-    {
-      "id": "latsar-mooc",
-      "title": "LATSAR MOOC LAN",
-      "url": "https://mooc.lan.go.id/",
-      "description": "Pembelajaran LATSAR",
-      "tags": ["diklat", "lan"],
-      "category": "Latsar",
-      "agency": "LAN RI"
-    },
-    {
-      "id": "surat-dinas",
-      "title": "Template Surat Dinas",
-      "url": "https://drive.google.com/",
-      "description": "Template surat dinas & naskah dinas",
-      "tags": ["template", "surat"],
-      "category": "Surat-Menyurat",
-      "agency": "Internal"
-    },
-    {
-      "id": "dapodik",
-      "title": "Dapodik",
-      "url": "https://dapodik.kemdikbud.go.id/",
-      "description": "Data Pokok Pendidikan",
-      "tags": ["kemdikbud", "sekolah"],
-      "category": "Pendidikan",
-      "agency": "Kemendikbud"
-    },
-    {
-      "id": "email-dinas",
-      "title": "Email Dinas",
-      "url": "https://mail.google.com/",
-      "description": "Akses email kedinasan",
-      "tags": ["gmail", "akun"],
-      "category": "Email & Akses",
-      "agency": "Internal"
-    },
-    {
-      "id": "sipkd",
-      "title": "SIPKD",
-      "url": "https://sipkd.jakarta.go.id/",
-      "description": "Sistem Informasi Pengelolaan Keuangan Daerah",
-      "tags": ["keuangan", "dki"],
-      "category": "Keuangan",
-      "agency": "Pemprov DKI"
-    }
-  ]
+ "categories": [
+   "Kepegawaian",
+   "Pengembangan Diri"
+ ],
+ "items": [
+   {
+     "id": "simpeg",
+     "title": "SIMPEG",
+     "url": "https://pegawai.jakarta.go.id/",
+     "description": "Sistem Informasi Manajemen Kepegawaian",
+     "tags": ["asn", "bkd"],
+     "category": "Kepegawaian",
+     "agency": "BKD Provinsi DKI Jakarta"
+   },
+   {
+     "id": "simdiklat",
+     "title": "SIMDIKLAT",
+     "url": "https://simdiklat-bpsdm.jakarta.go.id/",
+     "description": "Sistem Informasi Kediklatan",
+     "tags": ["bpsdm", "diklat"],
+     "category": "Pengembangan Diri",
+     "agency": "BPSDM Provinsi DKI Jakarta"
+   },
+   {
+     "id": "etpp",
+     "title": "e-Kinerja",
+     "url": "https://etpp.jakarta.go.id/",
+     "description": "Sistem Penilaian Kinerja",
+     "tags": ["kinerja","etpp", "bkd"],
+     "category": "Kepegawaian",
+     "agency": "BKD Provinsi DKI Jakarta"
+   },
+   {
+     "id": "regasn",
+     "title": "Reg ASN",
+     "url": "https://regasn.jakarta.go.id/",
+     "description": "Sistem Informasi Registrasi ASN",
+     "tags": ["regasn","bkd"],
+     "category": "Kepegawaian",
+     "agency": "BKD Provinsi DKI Jakarta"
+   },
+   {
+     "id": "kmbpsdm",
+     "title": "Knowledge Management",
+     "url": "https://km-bpsdm.jakarta.go.id/home",
+     "description": "Knowledge Management Pemerintah Provinsi DKI Jakarta",
+     "tags": ["km","bpsdm"],
+     "category": "Pengembangan Diri",
+     "agency": "BPSDM DKI Jakarta"
+   },
+   {
+     "id": "sijule",
+     "title": "SiJule",
+     "url": "https://sijule-bpsdm.jakarta.go.id/",
+     "description": "Sistem Jakarta U-Learning",
+     "tags": ["sijule","bpsdm"],
+     "category": "Pengembangan Diri",
+     "agency": "BPSDM DKI Jakarta"
+   },
+   {
+     "id": "eoffice",
+     "title": "e-Office",
+     "url": "https://eoffice.jakarta.go.id/",
+     "description": "Sistem Naskah Dinas Elektronik",
+     "tags": ["eoffice","surat"],
+     "category": "Kepegawaian",
+     "agency": "Dinas Komunikasi, Informatika dan Statistik"
+   },
+   {
+     "id": "eabsensi",
+     "title": "e-Absensi",
+     "url": "https://absensi.jakarta.go.id/loginadmin",
+     "description": "Pelaporan Kehadiran Pegawai Elektronik ASN DKI Jakarta",
+     "tags": ["bkddki","absen"],
+     "category": "Kepegawaian",
+     "agency": "BKD Provinsi DKI Jakarta"
+   }
+ ]
 }

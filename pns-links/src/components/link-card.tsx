@@ -13,19 +13,32 @@ import {
 import { cn } from "@/lib/utils";
 import { LinkItem } from "@/lib/types";
 import { isPinned, togglePinned } from "@/lib/storage";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
+
+function faviconFrom(url: string) {
+  try {
+    const host = new URL(url).hostname;
+    return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+  } catch {
+    return null;
+  }
+}
 
 export function LinkCard({
   item,
   compact = false,
-  onPinnedChange, // <<--- tambahkan ini
+  onPinnedChange,
 }: {
-  item: LinkItem;
+  item: LinkItem & { logoUrl?: string }; // tambahkan logoUrl opsional
   compact?: boolean;
-  onPinnedChange?: () => void; // dipanggil setelah toggle pin biar parent resort
+  onPinnedChange?: () => void;
 }) {
   const [pinned, setPinned] = useState(false);
+  const logo = useMemo(
+    () => item.logoUrl || faviconFrom(item.url),
+    [item.logoUrl, item.url]
+  );
 
   useEffect(() => {
     setPinned(isPinned(item.id));
@@ -35,7 +48,7 @@ export function LinkCard({
     const next = togglePinned(item.id);
     setPinned(next);
     toast[next ? "success" : "message"](next ? "Pinned" : "Unpinned");
-    onPinnedChange?.(); // <<--- beritahu parent supaya resort
+    onPinnedChange?.();
   }
 
   async function copyUrl() {
@@ -48,50 +61,95 @@ export function LinkCard({
   }
 
   return (
-    <Card className={cn("group", pinned && "ring-2 ring-primary/50")}>
+    <Card
+      className={cn(
+        "group transform transition-transform duration-200 hover:scale-105",
+        pinned && "ring-2 ring-primary/50"
+      )}
+    >
+
       <CardHeader className={cn("pb-2", compact && "py-2")}>
         <div className="flex items-center justify-between gap-2">
-          <CardTitle className={cn("text-base md:text-lg", compact && "text-sm")}>
-            {item.title}
+          <CardTitle
+            className={cn(
+              "flex items-center gap-2 text-base md:text-lg",
+              compact && "text-sm"
+            )}
+            title={item.title}
+          >
+            {logo && (
+              <img
+                src={logo}
+                alt=""
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className={cn(
+                  "rounded-sm object-contain shrink-0 bg-white",
+                  compact ? "h-4 w-4" : "h-5 w-5"
+                )}
+              />
+            )}
+            <span className="line-clamp-1">{item.title}</span>
           </CardTitle>
+
           <div className="flex items-center gap-1">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" onClick={copyUrl}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={copyUrl}
+                    aria-label="Salin URL"
+                  >
                     <Copy className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Salin URL</TooltipContent>
               </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    asChild
+                    aria-label="Buka link"
+                  >
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Buka link</TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={onTogglePin}
+                    aria-label={pinned ? "Unpin" : "Pin"}
+                  >
+                    {pinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>{pinned ? "Unpin" : "Pin"}</TooltipContent>
+              </Tooltip>
             </TooltipProvider>
-
-            <Button variant="ghost" size="icon" asChild>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Buka link"
-              >
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onTogglePin}
-              aria-label={pinned ? "Unpin" : "Pin"}
-            >
-              {pinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
-            </Button>
           </div>
         </div>
       </CardHeader>
 
       <CardContent className={cn("pt-0", compact && "py-2")}>
         {item.description && (
-          <p className={cn("text-sm text-muted-foreground", compact && "text-xs")}>
+          <p
+            className={cn(
+              "text-sm text-muted-foreground",
+              compact && "text-xs"
+            )}
+          >
             {item.description}
           </p>
         )}

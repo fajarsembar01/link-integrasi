@@ -75,9 +75,7 @@ export function ImportExport({
 
   return (
     <div className="flex items-center gap-2">
-      <Button variant="secondary" onClick={download}>
-        Export JSON
-      </Button>
+    
 
       <input
         ref={inputRef}

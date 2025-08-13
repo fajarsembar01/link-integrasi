@@ -1,0 +1,85 @@
+{
+  "categories": [
+    "Kepegawaian",
+    "SPMB",
+    "Latsar",
+    "Surat-Menyurat",
+    "Pendidikan",
+    "Email & Akses",
+    "Keuangan"
+  ],
+  "items": [
+    {
+      "id": "mysapk",
+      "title": "MySAPK BKN",
+      "url": "https://mysapk.bkn.go.id/",
+      "description": "Layanan kepegawaian BKN",
+      "tags": ["asn", "bkn"],
+      "category": "Kepegawaian",
+      "agency": "BKN"
+    },
+    {
+      "id": "ekinerja",
+      "title": "e-Kinerja DKI",
+      "url": "https://kinerja.jakarta.go.id/",
+      "description": "Pelaporan kinerja harian",
+      "tags": ["kinerja", "dki"],
+      "category": "Kepegawaian",
+      "agency": "Pemprov DKI"
+    },
+    {
+      "id": "spmb",
+      "title": "SPMB DKI",
+      "url": "https://spmb.jakarta.go.id/",
+      "description": "Seleksi Penerimaan Peserta Didik Baru",
+      "tags": ["ppdb", "data"],
+      "category": "SPMB",
+      "agency": "Disdik DKI"
+    },
+    {
+      "id": "latsar-mooc",
+      "title": "LATSAR MOOC LAN",
+      "url": "https://mooc.lan.go.id/",
+      "description": "Pembelajaran LATSAR",
+      "tags": ["diklat", "lan"],
+      "category": "Latsar",
+      "agency": "LAN RI"
+    },
+    {
+      "id": "surat-dinas",
+      "title": "Template Surat Dinas",
+      "url": "https://drive.google.com/",
+      "description": "Template surat dinas & naskah dinas",
+      "tags": ["template", "surat"],
+      "category": "Surat-Menyurat",
+      "agency": "Internal"
+    },
+    {
+      "id": "dapodik",
+      "title": "Dapodik",
+      "url": "https://dapodik.kemdikbud.go.id/",
+      "description": "Data Pokok Pendidikan",
+      "tags": ["kemdikbud", "sekolah"],
+      "category": "Pendidikan",
+      "agency": "Kemendikbud"
+    },
+    {
+      "id": "email-dinas",
+      "title": "Email Dinas",
+      "url": "https://mail.google.com/",
+      "description": "Akses email kedinasan",
+      "tags": ["gmail", "akun"],
+      "category": "Email & Akses",
+      "agency": "Internal"
+    },
+    {
+      "id": "sipkd",
+      "title": "SIPKD",
+      "url": "https://sipkd.jakarta.go.id/",
+      "description": "Sistem Informasi Pengelolaan Keuangan Daerah",
+      "tags": ["keuangan", "dki"],
+      "category": "Keuangan",
+      "agency": "Pemprov DKI"
+    }
+  ]
+}
